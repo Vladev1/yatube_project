@@ -16,9 +16,11 @@ Including another URLconf
 from django.urls import path
 from . import views
 
+app_name = 'posts'
+
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name='index'),
     # Главная стрница
-    path('group/<slug:slug>/', views.group_posts)
+    path('group/<slug:slug>/', views.group_posts, name='group_list')
     # Информация о группах постов
 ]
